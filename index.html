@@ -1,0 +1,26 @@
+<head>
+    <script src="mqtt.min.js"></script>
+    <script src="lights.js"></script>
+    <link rel="stylesheet" href="style.css"></link>
+</head>
+
+<body style="display: grid; grid-template-columns: 1fr 1fr; height: 97vh; width: 100vw;">
+    <img src="green.svg" alt="1" height="100%" id="green">
+    <img src="yellow.svg" alt="1" height="100%" id="yellow" hidden>
+    <img src="red.svg" alt="1" height="100%" id="red" hidden>
+    <img src="off.svg" alt="1" height="100%" id="off" hidden>
+    <div style="display: flex; flex-direction: column; justify-content: center; height: 100%; gap: 10rem;">
+        <div style="display: flex; flex-direction: column; margin: 0 auto;">
+            <img src="light1.png" style="width:25vh; cursor: pointer;" alt="1" onclick="Red()">
+            <img src="light2.png" style="width:25vh; cursor: pointer;" alt="1" onclick="Yellow()">
+            <img src="light3.png" style="width:25vh; cursor: pointer;" alt="1" onclick="Green()">
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <label for="switch" style="font-size: 6rem; text-align: center;">Power</label>
+            <label class="switch">
+                <input type="checkbox" id="switch" onchange="Power()" checked disabled>
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+</body>
