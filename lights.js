@@ -38,36 +38,36 @@ client.on('message', function (topic, message) {
   })
 
 function Green(isOn) {
-    alert('该网页已被查封')
-    // if(hasPower) {
-    //     if(!isOn) client.publish('lights/green', 'on')
-    //     document.getElementById('green').hidden = false;
-    //     document.getElementById('red').hidden = true;
-    //     document.getElementById('yellow').hidden = true;
-    //     document.getElementById('off').hidden = true;
-    // }
+    if(blackout) {alert('该网页已被查封'); return;}
+    if(hasPower) {
+        if(!isOn) client.publish('lights/green', 'on')
+        document.getElementById('green').hidden = false;
+        document.getElementById('red').hidden = true;
+        document.getElementById('yellow').hidden = true;
+        document.getElementById('off').hidden = true;
+    }
 }
 
 function Yellow(isOn) {
-    alert('该网页已被查封')
-    // if(hasPower) {
-    //     if(!isOn) client.publish('lights/yellow', 'on')
-    //     document.getElementById('green').hidden = true;
-    //     document.getElementById('red').hidden = true;
-    //     document.getElementById('yellow').hidden = false;
-    //     document.getElementById('off').hidden = true;
-    // }
+    if(blackout) {alert('该网页已被查封'); return;}
+    if(hasPower) {
+        if(!isOn) client.publish('lights/yellow', 'on')
+        document.getElementById('green').hidden = true;
+        document.getElementById('red').hidden = true;
+        document.getElementById('yellow').hidden = false;
+        document.getElementById('off').hidden = true;
+    }
 }
 
 function Red(isOn) {
-    alert('该网页已被查封')
-    // if(hasPower) {
-    //     if(!isOn) client.publish('lights/red', 'on')
-    //     document.getElementById('green').hidden = true;
-    //     document.getElementById('red').hidden = false;
-    //     document.getElementById('yellow').hidden = true;
-    //     document.getElementById('off').hidden = true;
-    // }
+    if(blackout) {alert('该网页已被查封'); return;}
+    if(hasPower) {
+        if(!isOn) client.publish('lights/red', 'on')
+        document.getElementById('green').hidden = true;
+        document.getElementById('red').hidden = false;
+        document.getElementById('yellow').hidden = true;
+        document.getElementById('off').hidden = true;
+    }
 }
 
 function Power() {
